@@ -1,0 +1,12 @@
+@import "tailwindcss";
+/* Theme colors — edit here */
+@theme {
+  --color-burgundy: #3b101d; --color-wine: #210b13; --color-rose: #d69aa6;
+  --color-champagne: #e9d6bd; --color-ivory: #f8f1e9; --color-gold: #c5a16a;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--color-wine); color: var(--color-ivory); overflow-x: hidden; }
+:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
+.particle { position: absolute; bottom: -10px; border-radius: 50%; background: var(--color-champagne); opacity: 0; animation: rise linear infinite; }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0 } 15% { opacity: .7 } 100% { transform: translateY(-110vh); opacity: 0 } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .particle { animation: none; } }
